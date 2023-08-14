@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="display"></div>
+    <button onclick="first_student()">first</button>
+    <button onclick="next_student()">next</button>
+    <button onclick="prev_student()">Prev</button>
+    <button onclick="last_student()">last</button>
+    <button onclick="add_student()">add_student</button>
+    <button onclick="deleat_student()">deleat_student</button>
+    <script>
+        let index = 0
+        let students = [
+            { "name": "yacov", "age": 20 },
+            { "name": "ana", "age": 15 },
+            { "name": "rony", "age": 7 },
+
+        ]
+        function update_display() {
+            display.innerHTML = students[index % students.length].name
+            display.innerHTML += students[index % students.length].age
+        }
+
+        update_display()
+
+        function next_student() {
+            index++
+            update_display()
+        }
+        function prev_student() {
+            if (index > 0)
+                index--
+            update_display()
+        }
+        function first_student() {
+            index = 0
+            update_display()
+        }
+        function last_student() {
+            index = students.length - 1
+            update_display()
+        }
+        
+        function add_student() {
+            
+        }
+        function deleat_student(params) {
+
+        }
+
+    </script>
+</body>
+
+</html>
